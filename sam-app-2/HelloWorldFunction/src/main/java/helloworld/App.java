@@ -16,9 +16,10 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
  */
 public class App implements RequestHandler<Object, Object> {
 
-    public Object handleRequest(final Object input, final Context context) {
+    public Object handleRequest( Object input,  Context context) {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
+        // 
         headers.put("X-Custom-Header", "application/json");
         try {
             final String pageContents = this.getPageContents("https://checkip.amazonaws.com");
